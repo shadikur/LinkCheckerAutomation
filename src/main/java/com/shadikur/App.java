@@ -21,8 +21,12 @@ public class App {
         options.addArguments("--headless");
         WebDriver driver = new ChromeDriver(options);
 
+        //Ask user to enter the URL
+        System.out.println("Enter the URL: ");
+        String getUrl = System.console().readLine();
+
         // Navigate to the website
-        driver.get("https://www.shadikur.com");
+        driver.get(getUrl);
 
         // Find all the links on the page
         List<WebElement> links = driver.findElements(By.tagName("a"));
