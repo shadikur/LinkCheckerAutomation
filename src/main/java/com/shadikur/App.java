@@ -36,8 +36,10 @@ public class App {
                 int responseCode = connection.getResponseCode();
 
                 if (responseCode >= 400) {
+                    // Yellow for broken link
                     System.out.println(url + "\033[1;33m is a broken link with error code: \033[0m" + responseCode);
                 } else {
+                    // Console Colored Text Output, Green for valid link and Red for broken link
                     System.out.println(url + "\033[1;32mis a valid link\033[0m");
                 }
             } catch (Exception e) {
