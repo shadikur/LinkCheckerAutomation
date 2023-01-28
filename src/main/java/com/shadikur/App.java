@@ -3,11 +3,11 @@ package com.shadikur;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -17,7 +17,9 @@ public class App {
         // Set up the web driver
 		// Setup ChromeDriver
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        WebDriver driver = new ChromeDriver(options);
 
         // Navigate to the website
         driver.get("https://www.shadikur.com");
