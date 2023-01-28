@@ -3,6 +3,8 @@ package com.shadikur;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.Scanner;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,8 +24,9 @@ public class App {
         WebDriver driver = new ChromeDriver(options);
 
         //Ask user to enter the URL
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the URL: ");
-        String getUrl = System.console().readLine();
+        String getUrl = scanner.nextLine();
 
         // Navigate to the website
         driver.get(getUrl);
