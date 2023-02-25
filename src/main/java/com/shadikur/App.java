@@ -20,7 +20,10 @@ public class App {
 		// Setup ChromeDriver
 		WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless --whitelisted-ips=");
+        options.addArguments("--headless");
+        options.addArguments("--whitelisted-ips=");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
 
         String url = null;
